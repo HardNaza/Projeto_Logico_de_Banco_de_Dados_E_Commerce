@@ -240,6 +240,31 @@ CREATE TABLE IF NOT EXISTS e_commerce.customer_legal_person (
   CONSTRAINT fk_customer_legal_person_address1 FOREIGN KEY (address_idaddress) REFERENCES e_commerce.address (idaddress)
 );
 
+###########################################
+###### INSERÇÃO DOS DADOS NAS TABELAS #####
+###########################################
+
+Inserir dados na tabela "individual_customer":
+INSERT INTO individual_customer (customer_id, first_name, last_name, address) VALUES (1, 'John', 'Doe', '123 Main St'),(2, 'Jane', 'Smith', '456 Elm St');
+
+Inserir dados na tabela "company_customer":
+INSERT INTO company_customer (customer_id, company_name, address) VALUES (3, 'ABC Company', '789 Oak St'),(4, 'XYZ Corporation', '987 Maple St');
+
+Inserir dados na tabela "supplier":
+INSERT INTO supplier (supplier_id, supplier_name) VALUES (1, 'Supplier A'),(2, 'Supplier B');
+
+Inserir dados na tabela "product":
+INSERT INTO product (product_id, description, category) VALUES (1, 'Product A', 'Category 1'),(2, 'Product B', 'Category 2'),(3, 'Product C', 'Category 1');
+
+Inserir dados na tabela "order":
+INSERT INTO "order" (order_id, order_date, status) VALUES (1, '2023-05-01', 'Pending'),(2, '2023-05-05', 'Shipped');
+
+Inserir dados na tabela "product_order":
+INSERT INTO product_order (order_id, product_id, quantity) VALUES (1, 1, 2),(1, 2, 3),(2, 3, 1);
+
+Inserir dados na tabela "product_supplier":
+INSERT INTO product_supplier (product_id, supplier_id, quantity) VALUES (1, 1, 10),(1, 2, 5),(2, 1, 8),(3, 2, 3);
+
 ##############################################
 ###### CRIAÇÃO DAS QUERYS PARA CONSULTAS #####
 ##############################################
